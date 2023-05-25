@@ -9,14 +9,11 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter()
 	},
-
-	preprocess: [
-		preprocess({
-			scss: {
-				prependData: '@use "src/lib/styles/_variables.scss" as *;'
-			}
-		})
-	]
+	preprocess: preprocess({
+		less: {
+			prependData: "@import 'src/lib/styles/variables.less';",
+		}
+	})
 };
 
 export default config;

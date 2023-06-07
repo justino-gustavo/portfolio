@@ -1,7 +1,7 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	export let toggle = false;
+	let toggle = false;
 	export let dropdown = false;
 	export let direction = 'center';
 

@@ -5,4 +5,4 @@ export const github = {
 	repos: writable(null)
 };
 
-export const notifications = writable(null);
+export const desktopMenu = writable(false);

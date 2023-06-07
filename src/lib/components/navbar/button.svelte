@@ -1,7 +1,7 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let toggle = false;
+	export let toggle = false;
 	export let dropdown = false;
 	export let direction = 'center';
 
@@ -14,7 +14,7 @@
 
 <div on:focusout={handleDropdownBlur} class="_button">
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<button on:click={() => (dropdown ? (toggle = !toggle) : null)} class:toggle>
+	<button on:click={() => (toggle = !toggle)} class:toggle>
 		<slot name="label" />
 	</button>
 	{#if dropdown && toggle}

@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import { github } from '$lib/utils/store';
 
-	import Header from '$lib/components/navbar/index.svelte';
+		import Desktop from '$lib/components/desktop.svelte';
 
 	onMount(async () => {
 		const profile = await (await fetch('https://api.github.com/users/' + PUBLIC_GH_USER)).json();
@@ -15,8 +15,9 @@
 	});
 </script>
 
-<Header />
-<slot />
+<Desktop>
+	<slot />
+</Desktop>
 
 <style lang="less" global>
 	@import '../lib/styles/global.less';

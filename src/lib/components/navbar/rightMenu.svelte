@@ -43,7 +43,8 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: @defaultSpacing;
-		width: max-content;
+		max-width: @menuMaxWidth;
+		min-width: @menuMinWidth;
 		border-radius: 5mm;
 
 		padding: @defaultSpacing;
@@ -65,7 +66,7 @@
 			height: @headerButtonSize;
 			min-width: 3cm;
 			padding-inline: @defaultSpacing 5mm;
-			border-radius: @headerButtonRadius;
+			border-radius: @headerButtonRadio;
 
 			background-color: lighten(@headerColor, 1%);
 			color: @headerTextColor;

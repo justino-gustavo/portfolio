@@ -1,8 +1,9 @@
 <script>
-	import { slide } from 'svelte/transition';
+	import { blur } from 'svelte/transition';
 
 	export let toggle = false;
 	export let dropdown = false;
+	export let togglable = dropdown;
 	export let direction = 'center';
 
 	// @ts-ignore
@@ -12,13 +13,13 @@
 	};
 </script>
 
-<div on:focusout={handleDropdownBlur} class="_button">
+<div on:focusout={dropdown ? handleDropdownBlur : null} class="_button">
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<button on:click={() => (toggle = !toggle)} class:toggle>
+	<button on:click={() => (togglable ? (toggle = !toggle) : null)} class:toggle>
 		<slot name="label" />
 	</button>
 	{#if dropdown && toggle}
-		<div class={direction} transition:slide>
+		<div class={direction} transition:blur>
 			<slot name="content" />
 		</div>
 	{/if}
@@ -29,7 +30,7 @@
 		position: relative;
 
 		padding: 1mm 1.5mm;
-		border-radius: @headerButtonRadius;
+		border-radius: @headerButtonRadio;
 
 		> button {
 			all: unset;
@@ -41,7 +42,7 @@
 			height: @headerButtonSize;
 			min-width: @headerButtonSize;
 			padding-inline: @defaultSpacing;
-			border-radius: @headerButtonRadius;
+			border-radius: @headerButtonRadio;
 
 			background-color: @headerButtonColor;
 			color: @headerTextColor;
@@ -71,6 +72,19 @@
 			}
 			&.right {
 				right: @defaultSpacing;
+			}
+
+			@media screen and (max-width: @checkPoint[mobile]) {
+				position: fixed;
+				top: calc(@headerHeight + @defaultSpacing);
+
+				&.left,
+				&.cente,
+				&.right {
+					left: 50%;
+					right: unset;
+					translate: -50%;
+				}
 			}
 		}
 	}

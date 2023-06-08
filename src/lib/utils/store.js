@@ -1,8 +1,5 @@
 import { writable } from 'svelte/store';
 
-export const github = {
-	profile: writable(null),
-	repos: writable(null)
-};
+export const github = writable(Object());
 
 export const desktopMenu = writable(false);

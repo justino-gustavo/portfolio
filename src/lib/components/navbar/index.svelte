@@ -1,26 +1,21 @@
 <script>
-	// @ts-nocheck
-
-	import { github , desktopMenu } from '$lib/utils/store';
+	import { github, desktopMenu } from '$lib/utils/store';
 
 	import Button from './button.svelte';
 	import RightMenu from './rightMenu.svelte';
 	import CenterMenu from './centerMenu.svelte';
-
-	let profile;
-	github.profile.subscribe((data) => (profile = data));
 </script>
 
 <nav class="_navbar">
-	<Button bind:toggle={$desktopMenu}>
+	<Button togglable bind:toggle={$desktopMenu}>
 		<svelte:fragment slot="label">
 			<span class="bi-circle" />
 		</svelte:fragment>
 	</Button>
 	<Button dropdown>
 		<svelte:fragment slot="label">
-			{#if profile}
-				{profile.name}
+			{#if $github.profile}
+				{$github.profile.name}
 			{:else}
 				...
 			{/if}
@@ -47,8 +42,8 @@
 		align-items: center;
 		justify-content: space-between;
 
-		width: 100%;
-		height: 100%;
+		width: inherit;
+		height: inherit;
 		padding-inline: 2mm;
 
 		background-color: @headerColor;

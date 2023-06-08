@@ -29,6 +29,8 @@
 	menu._menu {
 		border-radius: 5mm;
 
+		max-width: @menuMaxWidth;
+		min-width: @menuMinWidth;
 		padding: @defaultSpacing;
 
 		background-color: darken(@headerColor, 0.5%);
@@ -45,7 +47,7 @@
 				@iconSize: 1.3cm;
 
 				display: grid;
-				grid-template-columns: @iconSize 6cm;
+				grid-template-columns: @iconSize auto;
 				grid-template-rows: repeat(2, calc(@iconSize / 2));
 				gap: 0 @defaultSpacing;
 				grid-template-areas: 'icon title' 'icon content';
@@ -59,6 +61,7 @@
 
 					font-size: xx-large;
 				}
+
 				dt {
 					grid-area: title;
 					align-self: center;
@@ -73,6 +76,17 @@
 					text-align: justify;
 					text-overflow: ellipsis;
 					white-space: nowrap;
+				}
+			}
+			hr {
+				height: 1px;
+				width: 100%;
+				margin-block: @defaultSpacing;
+
+				background-color: @headerTextColor;
+
+				&:last-of-type {
+					display: none;
 				}
 			}
 		}

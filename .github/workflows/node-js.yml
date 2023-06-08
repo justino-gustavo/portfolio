@@ -11,7 +11,7 @@ on:
     branches: ['master']
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -21,6 +21,8 @@ jobs:
     strategy:
       matrix:
         node-version: [19.x, 20.x]
+
+    environment: github-pages
 
     steps:
       - uses: actions/checkout@v3
@@ -36,9 +38,9 @@ jobs:
 
       - name: Build release
         env:
-          BASE_PATH: '/portfolio'
-          PUBLIC_GH_USER: ${{ env.GITHUB_REPOSITORY_OWNER}}
-          PUBLIC_EMAIL: ${{vars.PUBLIC_EMAIL}}
+          BASE_PATH: '/${{github.event.repository.name}}'
+          PUBLIC_GH_USER: ${{ github.event.repository.owner }}
+          PUBLIC_EMAIL: ${{ vars.PUBLIC_EMAIL }}
         run: yarn run build && touch build/.nojekyll
 
       - name: Upload artifacts

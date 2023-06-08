@@ -39,7 +39,7 @@ jobs:
       - name: Build release
         env:
           BASE_PATH: '/${{github.event.repository.name}}'
-          PUBLIC_GH_USER: ${{ github.event.repository.owner }}
+          PUBLIC_GH_USER: ${{ github.event.repository.owner.login }}
           PUBLIC_EMAIL: ${{ vars.PUBLIC_EMAIL }}
         run: yarn run build && touch build/.nojekyll
 

@@ -33,9 +33,7 @@ jobs:
       - name: Build release
         env:
           BASE_PATH: '/portfolio'
-        run:
-          yarn run build
-          touch build/.nojekyll
+        run: yarn run build && touch build/.nojekyll
 
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v1

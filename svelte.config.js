@@ -9,7 +9,7 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		paths: {
-			base: process.env.NODE_ENV == 'development' ? "" : process.env.BASE_PATH
+			base: process.env.BASE_PATH || ''
 		}
 	},
 	preprocess: preprocess({

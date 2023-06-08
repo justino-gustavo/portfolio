@@ -10,7 +10,7 @@
 		const profile = await (await fetch('https://api.github.com/users/' + PUBLIC_GH_USER)).json();
 		const repos = await (await fetch(profile.repos_url)).json();
 
-		github.set({profile, repos});
+		github.set({ profile, repos });
 	});
 </script>
 

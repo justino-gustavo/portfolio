@@ -1,6 +1,4 @@
 <script>
-	import { desktopMenu } from '$lib/utils/store';
-
 	import Navbar from './navbar/index.svelte';
 </script>
 

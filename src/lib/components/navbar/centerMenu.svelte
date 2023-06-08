@@ -10,7 +10,7 @@
 
 <menu class="_menu">
 	<dl>
-		{#each msg as message, i}
+		{#each msg as message}
 			<div>
 				<span class={message.icon} />
 				<dt>

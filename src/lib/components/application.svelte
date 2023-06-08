@@ -1,7 +1,7 @@
 <script>
 	export let bgColor = 'white';
 	export let color = 'black';
-	export let icon = "bi-app";
+	export let icon = 'bi-app';
 </script>
 
 <div class="_application" style:background-color={bgColor} style:color>

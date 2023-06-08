@@ -14,7 +14,6 @@
 </script>
 
 <div on:focusout={dropdown ? handleDropdownBlur : null} class="_button">
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<button on:click={() => (togglable ? (toggle = !toggle) : null)} class:toggle>
 		<slot name="label" />
 	</button>

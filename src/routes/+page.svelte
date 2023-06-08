@@ -1,15 +1,15 @@
 <script>
 	import { desktopMenu } from '$lib/utils/store';
 
-	import Application from '$lib/components/application.svelte';
+	import Application from '$lib/components/application/index.svelte';
 </script>
 
 <div class="_desktop" data-menu={$desktopMenu}>
 	{#if !$desktopMenu}
-		<Application icon="bi-question-circle" color="white" bgColor="#e59a19" />
-		<Application icon="bi-folder" color="white" bgColor="#19e2e5" />
-		<Application icon="bi-code-slash" color="white" bgColor="#2e214f" />
-		<Application icon="bi-bell" color="white" bgColor="#3ac43f" />
+		<Application icon="bi-question-circle" color="white" background="#e59a19" />
+		<Application icon="bi-folder" color="white" background="#19e2e5" />
+		<Application icon="bi-code-slash" color="white" background="#2e214f" />
+		<Application icon="bi-bell" color="white" background="#3ac43f" />
 	{/if}
 </div>
 
@@ -29,12 +29,13 @@
 		background-size: cover;
 		background-position: center;
 
-		transition: ease 0.1s;
+		transition: ease 300ms;
 
 		&[data-menu='true'] {
 			border-radius: @desktopApplicationRadio;
 
 			transform: scale(0.6);
+			box-shadow: black 0 0 3cm;
 		}
 	}
 </style>

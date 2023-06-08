@@ -1,15 +1,15 @@
 <script>
-	export let bgColor = 'white';
+	export let background = 'white';
 	export let color = 'black';
 	export let icon = 'bi-app';
 </script>
 
-<div class="_application" style:background-color={bgColor} style:color>
+<button class="_application" style:background style:color>
 	<span class={icon} />
-</div>
+</button>
 
 <style lang="less">
-	div._application {
+	button._application {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -19,5 +19,7 @@
 		border-radius: @desktopApplicationRadio;
 
 		font-size: calc(@desktopApplicationSize - (@defaultSpacing * 3));
+
+		cursor: pointer;
 	}
 </style>

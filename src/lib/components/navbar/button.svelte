@@ -18,7 +18,7 @@
 		<slot name="label" />
 	</button>
 	{#if dropdown && toggle}
-		<div class={direction} transition:blur>
+		<div class={direction} transition:blur={{ duration: 300 }}>
 			<slot name="content" />
 		</div>
 	{/if}

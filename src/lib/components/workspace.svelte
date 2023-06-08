@@ -28,10 +28,13 @@
 			grid-area: header;
 
 			height: 100%;
-			width: 100%;
+			width: inherit;
 		}
 		> main {
 			grid-area: workspace;
+
+			height: 100%;
+			width: inherit;
 		}
 	}
 </style>

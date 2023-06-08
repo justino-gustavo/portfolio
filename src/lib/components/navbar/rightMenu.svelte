@@ -59,13 +59,13 @@
 			justify-content: space-evenly;
 		}
 		a {
-			display: flex;
+			display: inline-flex;
 			align-items: center;
-			justify-content: space-between;
+			justify-content: space-around;
 
 			height: @headerButtonSize;
 			min-width: 3cm;
-			padding-inline: @defaultSpacing 5mm;
+			padding-inline: @defaultSpacing;
 			border-radius: @headerButtonRadio;
 
 			background-color: lighten(@headerColor, 1%);

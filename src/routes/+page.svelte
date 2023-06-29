@@ -4,6 +4,10 @@
 	import Application from '$lib/components/application/index.svelte';
 </script>
 
+<svelte:head>
+	<title>Gustavo Justino - Desktop</title>
+</svelte:head>
+
 <div class="_desktop" data-menu={$desktopMenu}>
 	{#if !$desktopMenu}
 		<Application icon="bi-question-circle" color="white" background="#e59a19" />

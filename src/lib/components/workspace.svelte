@@ -19,8 +19,8 @@
 		grid-template-rows: @headerHeight calc(100% - @headerHeight);
 		grid-template-areas: 'header' 'workspace';
 
-		height: 100vh;
-		width: 100vw;
+		height: 100vb;
+		width: 100vi;
 
 		background-color: @workspaceColor;
 

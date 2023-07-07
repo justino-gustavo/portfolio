@@ -1,11 +1,11 @@
 <script>
-	import { desktopMenu } from '$lib/utils/store';
+	import { desktopMenu, github } from '$lib/utils/store';
 
 	import Application from '$lib/components/application/index.svelte';
 </script>
 
 <svelte:head>
-	<title>Gustavo Justino - Desktop</title>
+	<title>{$github.profile.name} - Desktop</title>
 </svelte:head>
 
 <div class="_desktop" data-menu={$desktopMenu}>

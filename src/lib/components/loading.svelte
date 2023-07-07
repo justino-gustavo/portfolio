@@ -3,7 +3,7 @@
 </script>
 
 <div class="_loading" transition:fade={{ duration: 300 }}>
-	<progress value="50" min="0" max="100" />
+	<progress value="50" max="100" />
 </div>
 
 <style lang="less">

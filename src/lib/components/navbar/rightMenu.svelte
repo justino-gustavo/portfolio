@@ -1,12 +1,13 @@
 <script>
 	import Button from './button.svelte';
 
-	import { PUBLIC_EMAIL, PUBLIC_GH_USER } from '$env/static/public';
+	import { github } from '$lib/utils/store';
+	import { PUBLIC_EMAIL } from '$env/static/public';
 
 	const buttonsObj = {
 		github: {
 			icon: 'bi-github',
-			link: `https://github.com/${PUBLIC_GH_USER}`,
+			link: `https://github.com/${$github.profile.login}`,
 			target: '_blank'
 		},
 		email: {

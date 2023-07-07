@@ -6,7 +6,6 @@
 	export let togglable = dropdown;
 	export let direction = 'center';
 
-	// @ts-ignore
 	const handleDropdownBlur = ({ relatedTarget, currentTarget }) => {
 		if (relatedTarget && currentTarget.contains(relatedTarget)) return;
 		toggle = false;

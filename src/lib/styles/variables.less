@@ -4,20 +4,30 @@
 	desktop: 1200px;
 };
 
-@defaultSpacing: 2mm;
+@global: {
+	spacing: 2mm;
+	transition: 300ms ease 0s;
+};
 
-@headerHeight: 9mm;
-@headerColor: hsl(210, 55%, 5%);
-@headerTextColor: whitesmoke;
-@headerButtonSize: @headerHeight - 2mm;
-@headerButtonColor: transparent;
-@headerButtonHoverColor: hsla(0, 0%, 100%, 10%);
-@headerButtonRadio: 99cm;
+@header: {
+	height: 9mm;
+	width: 100%;
+	padding: 1mm;
+	background: #08141f;
+	color: #f5f5f5;
+	radius: 0;
+};
+@headerButton: {
+	color: transparent;
+	hover: #ffffff1a;
+	radius: 99cm;
+	icon-size: large;
+};
 
-@workspaceColor: hsl(208, 24%, 14%);
+@workspace: {
+	background: #1b242c;
+	scale: 0.6;
+	radius: 3mm;
+};
 
-@desktopApplicationSize: 1.5cm;
-@desktopApplicationRadio: 3mm;
-
-@menuMaxWidth: 9cm;
-@menuMinWidth: 7cm;
+//===============================================================================//

@@ -1,40 +1,59 @@
 <script>
-	import Navbar from './navbar/index.svelte';
+	import { desktopMenu } from '$lib/utils/store';
+
+	import Header from './header.svelte';
+	import Dock from './dock.svelte';
 </script>
 
-<section class="_workspace">
+<section id="workspace">
 	<header>
-		<slot name="header">
-			<Navbar />
-		</slot>
+		<Header />
 	</header>
-	<main>
+	<main class:toggle={$desktopMenu}>
 		<slot />
 	</main>
+	<footer>
+		<Dock />
+	</footer>
 </section>
 
 <style lang="less">
-	section._workspace {
+	section#workspace {
 		display: grid;
-		grid-template-rows: @headerHeight calc(100% - @headerHeight);
-		grid-template-areas: 'header' 'workspace';
+		grid-template-rows: @header[height] auto;
+		grid-template-columns: auto;
+		grid-template-areas: 'h' 'b';
 
 		height: 100vb;
 		width: 100vi;
 
-		background-color: @workspaceColor;
+		background: @workspace[background];
 
 		> header {
-			grid-area: header;
-
-			height: 100%;
-			width: inherit;
+			grid-area: h;
 		}
 		> main {
-			grid-area: workspace;
+			grid-area: b;
 
-			height: 100%;
-			width: inherit;
+			background-image: url("../assets/images/bg.jpg");
+			background-position: center;
+			background-size: cover;
+
+			transition: @global[transition];
+			&.toggle {
+				border-radius: @workspace[radius];
+
+				transform: scale(@workspace[scale]);
+				box-shadow: #00000080 0 0 3cm;
+			}
+		}
+		> footer {
+			position: absolute;
+
+			bottom: 0;
+			left: 50%;
+
+			translate: -50%;
 		}
 	}
 </style>

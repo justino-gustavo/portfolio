@@ -1,5 +1,5 @@
 <script>
-		import { sleep } from '$lib/utils/misc';
+	import { sleep } from '$lib/utils/misc';
 
 	import Loading from '$lib/components/loading.svelte';
 	import Workspace from '$lib/components/workspace.svelte';

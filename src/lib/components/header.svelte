@@ -10,13 +10,17 @@
 	</Dropdown>
 	<Dropdown>
 		{$github.profile.name}
-		<svelte:fragment slot="content">test</svelte:fragment>
+		<div slot="content" id="center-menu">
+			
+		</div>
 	</Dropdown>
 	<Dropdown align="left">
 		<i class="bi-circle-half" />
 		<i class="bi-share" style="margin: 0 2mm;" />
 		<i class="bi-gear" />
-		<svelte:fragment slot="content">test</svelte:fragment>
+		<div slot="content" id="right-menu">
+
+		</div>
 	</Dropdown>
 </nav>
 

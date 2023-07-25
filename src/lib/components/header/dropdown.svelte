@@ -16,11 +16,11 @@
 <svelte:window on:click={onWindowClick} />
 
 <div id="dropdown" bind:this={container}>
-	<Toggle ref="header-button" bind:toggle>
+	<Toggle data-ref="header-button" bind:toggle>
 		<slot />
 	</Toggle>
 	{#if toggle && $$slots.content}
-		<Menu ref="header-menu" class={'align ' + align}>
+		<Menu data-ref="header-menu" class={align}>
 			<slot name="content" />
 		</Menu>
 	{/if}
@@ -33,7 +33,7 @@
 		position: relative;
 	}
 
-	:global([ref='header-button']) {
+	:global([data-ref='header-button']) {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -52,29 +52,29 @@
 			background-color: @headerButton[hover];
 		}
 	}
-	:global([ref='header-button'].toggle) {
+	:global([data-ref='header-button'].toggle) {
 		background-color: @headerButton[hover];
 	}
 
-	:global([ref='header-menu'].align) {
+	:global([data-ref='header-menu']) {
 		position: absolute;
 		top: calc(100% + @global[spacing]);
 	}
-	:global([ref='header-menu'].left) {
+	:global([data-ref='header-menu'].left) {
 		right: 0;
 	}
-	:global([ref='header-menu'].center) {
+	:global([data-ref='header-menu'].center) {
 		right: 50%;
 		translate: 50%;
 	}
 
 	@media screen and (max-width: @checkPoint[tablet]) {
-		:global([ref='header-menu'].align) {
+		:global([data-ref='header-menu']) {
 			position: fixed;
 
 			top: calc(@header[height] + (@global[spacing] / 2));
 		}
-		:global([ref='header-menu'].left) {
+		:global([data-ref='header-menu'].left) {
 			right: 50%;
 
 			translate: 50%;

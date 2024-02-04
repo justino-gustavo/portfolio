@@ -30,12 +30,16 @@
 		background: @workspace[background];
 
 		> header {
+			z-index: @screenIndex[priority-1];
+
 			grid-area: h;
 		}
 		> main {
+			z-index: @screenIndex[priority-2];
+
 			grid-area: b;
 
-			background-image: url("../assets/images/bg.jpg");
+			background-image: url('../assets/images/bg.avif');
 			background-position: center;
 			background-size: cover;
 
@@ -43,11 +47,13 @@
 			&.toggle {
 				border-radius: @workspace[radius];
 
-				transform: scale(@workspace[scale]);
+				transform: scale(@workspace[scale]) translate(0, -20mm);
 				box-shadow: #00000080 0 0 3cm;
 			}
 		}
 		> footer {
+			z-index: @screenIndex[priority-3];
+
 			position: absolute;
 
 			bottom: 0;

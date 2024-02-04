@@ -1,0 +1,41 @@
+{
+	"btn-listAll": {
+		"icon": "/src/lib/assets/images/apps_menu.avif",
+		"name": "Menu"
+	},
+
+	"favorites": ["0100", "0283", "6843"],
+
+	"apps": [
+		{
+			"id": "0100",
+			"icon": "https://placehold.co/56x56/red/black.png?text=Hello+World!",
+			"name": "Hello world!"
+		},
+		{
+			"id": "0283",
+			"icon": "https://placehold.co/56x56/green/black.png?text=Hello+World!",
+			"name": "Hello world!"
+		},
+		{
+			"id": "5371",
+			"icon": "https://placehold.co/56x56/blue/black.png?text=Hello+World!",
+			"name": "Hello world!"
+		},
+		{
+			"id": "0173",
+			"icon": "https://placehold.co/56x56/cyan/black.png?text=Hello+World!",
+			"name": "Hello world!"
+		},
+		{
+			"id": "6843",
+			"icon": "https://placehold.co/56x56/magenta/black.png?text=Hello+World!",
+			"name": "Hello world!"
+		},
+		{
+			"id": "2843",
+			"icon": "https://placehold.co/56x56/yellow/black.png?text=Hello+World!",
+			"name": "Hello world!"
+		}
+	]
+}

@@ -34,6 +34,8 @@
 	}
 
 	:global([data-ref='header-button']) {
+		cursor: pointer;
+
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;

@@ -1,20 +1,48 @@
 <script>
-	import { desktopMenu } from '$lib/utils/store';
+	import { desktopMenu, showApps } from '$lib/utils/store';
+	import absoluteapps from '$lib/utils/config/apps.json';
 
-	import Header from './header.svelte';
 	import Dock from './dock.svelte';
+	import Header from './header.svelte';
+	import Icon from './icon.svelte';
+
+	export let header = true,
+		desktop = false;
 </script>
 
 <section id="workspace">
-	<header>
-		<Header />
-	</header>
-	<main class:toggle={$desktopMenu}>
+	{#if header}
+		<header>
+			<Header />
+		</header>
+	{/if}
+
+	<main class:toggle={$desktopMenu} class:show-apps={$showApps} class:desktop>
 		<slot />
 	</main>
-	<footer>
-		<Dock />
-	</footer>
+
+	{#if $showApps}
+		<ul>
+			{#each absoluteapps.apps as app, key}
+				<ul {key}>
+					<Icon
+						id={app.id}
+						index={key}
+						name={app.name}
+						bgColor={app.color}
+						iconImg={app.icon}
+						iconClip={app['icon-clip']}
+					/>
+				</ul>
+			{/each}
+		</ul>
+	{/if}
+
+	{#if desktop && !$showApps}
+		<footer>
+			<Dock />
+		</footer>
+	{/if}
 </section>
 
 <style lang="less">
@@ -39,16 +67,22 @@
 
 			grid-area: b;
 
-			background-image: url('../assets/images/bg.avif');
-			background-position: center;
-			background-size: cover;
+			&.desktop {
+				background-image: url('../assets/images/bg.avif');
+				background-position: center;
+				background-size: cover;
 
-			transition: @global[transition];
-			&.toggle {
-				border-radius: @workspace[radius];
+				transition: @global[transition];
+				&.toggle, &.show-apps {
+					border-radius: @workspace[radius];
 
-				transform: scale(@workspace[scale]) translate(0, -20mm);
-				box-shadow: #00000080 0 0 3cm;
+					transform: scale(@workspace[scale]) translate(0, -20mm);
+					box-shadow: #00000080 0 0 3cm;
+				}
+				&.show-apps {
+					transform: scale(0.2) translate(0, -20mm);
+
+				}
 			}
 		}
 		> footer {

@@ -1,9 +1,11 @@
 <script>
-	import absolutepps from '$lib/utils/config/apps.json';
+	import { showApps } from '$lib/utils/store';
 
-	import Icon from '$lib/components/apps/icon.svelte';
+	import absoluteapps from '$lib/utils/config/apps.json';
 
-	const favorites = absolutepps.apps.filter(({id}) => absolutepps.favorites.includes(id));
+	import Icon from '$lib/components/icon.svelte';
+
+	const favorites = absoluteapps.apps.filter(({ id }) => absoluteapps.favorites.includes(id));
 </script>
 
 <nav id="nav">
@@ -20,7 +22,15 @@
 		{/each}
 	</div>
 	<hr />
-	<Icon id="main" index={-1} name={absolutepps['btn-listAll'].name} iconImg={absolutepps['btn-listAll'].icon} />
+	<Icon
+		id="main"
+		index={-1}
+		name={absoluteapps['btn-menu'].name}
+		iconImg={absoluteapps['btn-menu'].icon}
+		action={() => {
+			$showApps = !$showApps;
+		}}
+	/>
 </nav>
 
 <style lang="less">

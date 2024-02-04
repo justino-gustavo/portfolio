@@ -1,6 +1,6 @@
 {
-	"btn-listAll": {
-		"icon": "/src/lib/assets/images/apps_menu.avif",
+	"btn-menu": {
+		"icon": "/assets/images/apps_menu.avif",
 		"name": "Menu"
 	},
 

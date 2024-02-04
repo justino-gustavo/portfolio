@@ -4,16 +4,19 @@
 		iconClip = false,
 		name = '',
 		index = 0,
-		id = '';
+		id = '',
+		action;
 
 	const bgSize = iconClip ? 'cover' : 'contain';
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	id="icon-{id}"
 	data-index={index}
 	title={name}
 	style=" --icon_img: url({iconImg}); --icon_bg_color: {bgColor}; --icon_bg_size: {bgSize};"
+	on:click={action}
 />
 
 <style lang="less">

@@ -13,7 +13,7 @@
 		{#each favorites as app, key}
 			<Icon
 				id={app.id}
-				index={key}
+				{key}
 				name={app.name}
 				bgColor={app.color}
 				iconImg={app.icon}

@@ -3,8 +3,9 @@
 		iconImg = '',
 		iconClip = false,
 		name = '',
-		index = 0,
+		key,
 		id = '',
+		size = "1cm",
 		action;
 
 	const bgSize = iconClip ? 'cover' : 'contain';
@@ -13,14 +14,14 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	id="icon-{id}"
-	data-index={index}
+	{key}
 	title={name}
-	style=" --icon_img: url({iconImg}); --icon_bg_color: {bgColor}; --icon_bg_size: {bgSize};"
+	style=" --icon_img: url({iconImg}); --icon_bg_color: {bgColor}; --icon_bg_size: {bgSize}; --app_size: {size};"
 	on:click={action}
 />
 
 <style lang="less">
-	@appSize: 1cm;
+	@appSize: var(--app_size);
 
 	div[id^='icon'] {
 		cursor: pointer;

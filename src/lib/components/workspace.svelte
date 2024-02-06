@@ -24,16 +24,17 @@
 	{#if $showApps}
 		<ul>
 			{#each absoluteapps.apps as app, key}
-				<ul {key}>
+				<li {key}>
 					<Icon
 						id={app.id}
-						index={key}
 						name={app.name}
 						bgColor={app.color}
 						iconImg={app.icon}
 						iconClip={app['icon-clip']}
+						size="1.5cm"
 					/>
-				</ul>
+					<span>{app.name}</span>
+				</li>
 			{/each}
 		</ul>
 	{/if}
@@ -73,15 +74,56 @@
 				background-size: cover;
 
 				transition: @global[transition];
-				&.toggle, &.show-apps {
+				&.toggle,
+				&.show-apps {
 					border-radius: @workspace[radius];
 
-					transform: scale(@workspace[scale]) translate(0, -20mm);
+					transform: scale(@workspace[scale]);
+					translate: 0 -20mm;
 					box-shadow: #00000080 0 0 3cm;
 				}
 				&.show-apps {
-					transform: scale(0.2) translate(0, -20mm);
+					transform: scale(20%);
+					translate: 0 -36%;
+				}
+			}
+		}
+		> ul {
+			@iconMenuSize: 3cm;
 
+			position: absolute;
+
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(@iconMenuSize, 1fr));
+			grid-auto-rows: min-content;
+			justify-items: center;
+
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 71vh;
+			padding: 3mm;
+
+			list-style: none;
+
+			> li {
+				display: inline-flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				width: @iconMenuSize;
+				height: @iconMenuSize;
+				border-radius: 6mm;
+
+				> span {
+					margin-top: 3mm;
+
+					color: white;
+				}
+
+				&:hover {
+					background-color: #70707023;
 				}
 			}
 		}

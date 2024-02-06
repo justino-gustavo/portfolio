@@ -1,1 +1,1 @@
-<a href="/desktop">Open desktop</a>
+<a href="desktop">Open desktop</a>

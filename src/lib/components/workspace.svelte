@@ -1,4 +1,7 @@
 <script>
+	import { base } from '$app/paths';
+	import { slide } from 'svelte/transition';
+
 	import { desktopMenu, showApps } from '$lib/utils/store';
 	import absoluteapps from '$lib/utils/config/apps.json';
 
@@ -17,19 +20,19 @@
 		</header>
 	{/if}
 
-	<main class:toggle={$desktopMenu} class:show-apps={$showApps} class:desktop>
+	<main class:toggle={$desktopMenu} class:show-apps={$showApps && $desktopMenu} class:desktop>
 		<slot />
 	</main>
 
-	{#if $showApps}
-		<ul>
+	{#if $showApps && $desktopMenu}
+		<ul transition:slide>
 			{#each absoluteapps.apps as app, key}
 				<li {key}>
 					<Icon
 						id={app.id}
 						name={app.name}
 						bgColor={app.color}
-						iconImg={app.icon}
+						iconImg={app.icon.replace('${path}', base)}
 						iconClip={app['icon-clip']}
 						size="1.5cm"
 					/>
@@ -39,7 +42,7 @@
 		</ul>
 	{/if}
 
-	{#if desktop && !$showApps}
+	{#if desktop}
 		<footer>
 			<Dock />
 		</footer>
@@ -97,12 +100,13 @@
 			grid-template-columns: repeat(auto-fill, minmax(@iconMenuSize, 1fr));
 			grid-auto-rows: min-content;
 			justify-items: center;
+			gap: 6mm;
 
 			bottom: 0;
 			left: 0;
 			right: 0;
 			height: 71vh;
-			padding: 3mm;
+			padding: 3mm 3cm;
 
 			list-style: none;
 

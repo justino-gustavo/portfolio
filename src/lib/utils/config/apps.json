@@ -1,6 +1,6 @@
 {
 	"btn-menu": {
-		"icon": "/assets/images/apps_menu.avif",
+		"icon": "${path}/assets/images/apps_menu.avif",
 		"name": "Menu"
 	},
 

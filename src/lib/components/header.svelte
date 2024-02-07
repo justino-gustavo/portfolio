@@ -1,5 +1,5 @@
 <script>
-	import { desktopMenu } from '$lib/utils/store';
+	import { desktopMenu} from '$lib/utils/store';
 
 	import Dropdown from './header/dropdown.svelte';
 

@@ -1,6 +1,7 @@
 <script>
-	import { showApps } from '$lib/utils/store';
+	import { base } from '$app/paths';
 
+	import { showApps } from '$lib/utils/store';
 	import absoluteapps from '$lib/utils/config/apps.json';
 
 	import Icon from '$lib/components/icon.svelte';
@@ -11,14 +12,7 @@
 <nav id="nav">
 	<div id="favorites">
 		{#each favorites as app, key}
-			<Icon
-				id={app.id}
-				{key}
-				name={app.name}
-				bgColor={app.color}
-				iconImg={app.icon}
-				iconClip={app['icon-clip']}
-			/>
+			<Icon id={app.id} {key} name={app.name} bgColor={app.color} iconImg={app.icon.replace('${path}', base)} iconClip={app['icon-clip']} />
 		{/each}
 	</div>
 	<hr />
@@ -26,7 +20,7 @@
 		id="main"
 		index={-1}
 		name={absoluteapps['btn-menu'].name}
-		iconImg={absoluteapps['btn-menu'].icon}
+		iconImg={absoluteapps['btn-menu'].icon.replace('${path}', base)}
 		action={() => {
 			$showApps = !$showApps;
 		}}

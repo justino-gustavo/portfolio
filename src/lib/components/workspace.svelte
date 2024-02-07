@@ -110,6 +110,10 @@
 
 			list-style: none;
 
+			@media screen and (max-width: @checkPoint[tablet]) {
+				padding: 3px;
+			}
+
 			> li {
 				display: inline-flex;
 				flex-direction: column;

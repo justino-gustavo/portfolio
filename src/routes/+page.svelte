@@ -1,1 +1,3 @@
-<a href="desktop">Open desktop</a>
+<svelte:head>
+	<title>Gustavo Justino - Desktop</title>
+</svelte:head>

@@ -1,11 +1,11 @@
 <script>
 	import { desktopMenu, showApps } from '$lib/utils/store';
-	import { slide, fade } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 
 	import Header from './header.svelte';
-	import Desktop from './desktop.svelte';
+	import Desktop from '../../desktop.svelte';
 	import Dock from './dock.svelte';
-	import Menu from './menu.svelte';
+	import Menu from '../../menu.svelte';
 
 	export let header = true,
 		desktop = false;
@@ -66,7 +66,7 @@
 				height: 100%;
 				width: 100%;
 
-				background-image: url('../assets/images/bg.avif');
+				background-image: url('../../../assets/images/bg.avif');
 				background-position: center;
 				background-size: cover;
 

@@ -8,3 +8,5 @@ desktopMenu.subscribe((value) => {
 		showApps.set(false);
 	}
 });
+
+export const booting = writable(true);

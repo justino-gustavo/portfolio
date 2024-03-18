@@ -1,7 +1,7 @@
 <script>
 	import { desktopMenu} from '$lib/utils/store';
 
-	import Dropdown from './header/dropdown.svelte';
+	import Dropdown from '../../header/dropdown.svelte';
 
 	const time = new Date();
 </script>

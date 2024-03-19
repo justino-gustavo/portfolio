@@ -7,7 +7,7 @@
 
 	const wait = (delay) => new Promise((res) => setTimeout(res, delay));
 
-	wait(8000).then(() => ($booting = false));
+	wait(10000).then(() => ($booting = false));
 </script>
 
 <main id="boot">

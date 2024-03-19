@@ -3,9 +3,9 @@
 	import { slide } from 'svelte/transition';
 
 	import Header from './header.svelte';
-	import Desktop from '../../desktop.svelte';
+	import Desktop from './desktop.svelte';
 	import Dock from './dock.svelte';
-	import Menu from '../../menu.svelte';
+	import Menu from './menu.svelte';
 
 	export let header = true,
 		desktop = false;

@@ -1,4 +1,4 @@
-<section id="grub">
+<section id="boot-menu">
 	<ul>
 		<li class="active">Linux Gnome</li>
 		<li>Linux Gnome (recovery)</li>
@@ -11,7 +11,7 @@
 </section>
 
 <style lang="less">
-	section#grub {
+	section#boot-menu {
 		height: 100%;
 		width: 100%;
 

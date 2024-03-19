@@ -4,7 +4,7 @@
 
 	import absoluteapps from '$lib/utils/config/apps.json';
 
-	import Icon from './icon.svelte';
+	import Icon from '../../icon.svelte';
 
 	let columns = 6,
 		currentPage = 1,
